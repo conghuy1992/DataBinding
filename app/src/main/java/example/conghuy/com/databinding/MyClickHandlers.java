@@ -23,4 +23,10 @@ public class MyClickHandlers {
         Toast.makeText(context, "Button long pressed!", Toast.LENGTH_SHORT).show();
         return false;
     }
+    public void onUpdateData(View view, User user) {
+//        Toast.makeText(context, "Button clicked! Name: " + user.name, Toast.LENGTH_SHORT).show();
+        user.setName("Huy");
+        user.setEmail("Gmail");
+
+    }
 }

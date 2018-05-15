@@ -32,13 +32,13 @@ public class MainActivity extends AppCompatActivity {
         MyClickHandlers handlers = new MyClickHandlers(this);
         binding.setHandlers(handlers);
 
-       new Handler().postDelayed(new Runnable() {
-           @Override
-           public void run() {
-               user.setName("Huy");
-               user.setEmail("Gmail");
-           }
-       },2000);
+//       new Handler().postDelayed(new Runnable() {
+//           @Override
+//           public void run() {
+//               user.setName("Huy");
+//               user.setEmail("Gmail");
+//           }
+//       },2000);
     }
 
 
