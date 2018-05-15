@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         user = new User();
         user.setName("Ravi Tamada");
         user.setEmail("ravi@androidhive.info");
+        user.setProfileImage("https://api.androidhive.info/images/nature/david1.jpg");
 
         binding.setUser(user);
 

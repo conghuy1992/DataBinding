@@ -2,6 +2,10 @@ package example.conghuy.com.databinding;
 
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
+import android.databinding.BindingAdapter;
+import android.widget.ImageView;
+
+import com.bumptech.glide.Glide;
 
 public class User extends BaseObservable{
     String name;
@@ -27,5 +31,24 @@ public class User extends BaseObservable{
     public void setEmail(String email) {
         this.email = email;
         notifyPropertyChanged(BR.email);
+    }
+    String profileImage;
+
+    public String getProfileImage() {
+        return profileImage;
+    }
+
+    public void setProfileImage(String profileImage) {
+        this.profileImage = profileImage;
+    }
+
+    @BindingAdapter({"android:profileImage"})
+    public static void loadImage(ImageView view, String imageUrl) {
+        Glide.with(view.getContext())
+                .load(imageUrl)
+                .into(view);
+
+        // If you consider Picasso, follow the below
+        // Picasso.with(view.getContext()).load(imageUrl).placeholder(R.drawable.placeholder).into(view);
     }
 }
