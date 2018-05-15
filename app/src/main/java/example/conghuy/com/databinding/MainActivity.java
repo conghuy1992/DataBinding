@@ -2,6 +2,7 @@ package example.conghuy.com.databinding;
 
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -27,6 +28,17 @@ public class MainActivity extends AppCompatActivity {
         user.setEmail("ravi@androidhive.info");
 
         binding.setUser(user);
+
+        MyClickHandlers handlers = new MyClickHandlers(this);
+        binding.setHandlers(handlers);
+
+       new Handler().postDelayed(new Runnable() {
+           @Override
+           public void run() {
+               user.setName("Huy");
+               user.setEmail("Gmail");
+           }
+       },2000);
     }
 
 
